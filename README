@@ -1,0 +1,78 @@
+Hotel Booking Demand & Cancellation Prediction
+
+Overview
+This project focuses on analyzing hotel booking data to understand key trends, customer behavior, and factors leading to cancellations. A machine learning model is developed to predict whether a booking will be canceled or not, and an interactive Streamlit app is built to allow real-time predictions based on user inputs.
+
+Objectives
+Perform comprehensive data analysis to identify booking trends and customer patterns.
+Handle missing values, outliers, and feature engineering for better model accuracy.
+Train and fine-tune a machine learning model to predict booking cancellations.
+Build an interactive Streamlit web app for real-time predictions.
+
+Dataset
+The dataset used is a hotel booking dataset containing various attributes such as:
+Booking details (lead time, number of nights, ADR, etc.)
+Customer details (adults, children, repeat guests, etc.)
+Hotel details (type of hotel, deposit type, meal, etc.)
+Cancellations and special requests
+
+Key Steps
+1. Data Analysis & Cleaning
+Handled missing values and removed duplicates.
+Performed outlier detection and capping for skewed features.
+Converted categorical variables using Label Encoding.
+Generated insights through visualizations such as booking trends, cancellation ratios, and correlations.
+
+2. Feature Engineering
+
+Created new variables such as:
+high_canceller – to flag frequent cancellers.
+high_request – based on number of special requests.
+last_minute – to mark late bookings.
+Standardized and optimized features for model training.
+
+3. Model Development
+
+Implemented multiple ML algorithms and selected Random Forest Classifier as the best performer.
+Fine-tuned using GridSearchCV for optimal hyperparameters.
+Evaluated using metrics:
+Accuracy: 83.61%
+Precision: 78.10%
+Recall: 75.74%
+F1 Score: 76.90%
+ROC-AUC: 90.76%
+
+4. Visualization & Insights
+
+Visualized feature importances to identify key drivers of cancellations.
+Used alternative interpretability methods for model explainability instead of SHAP due to high runtime.
+
+5. Streamlit Web Application
+
+Developed an interactive Streamlit dashboard for predictions.
+The user can input booking details, and the model returns a real-time cancellation prediction.
+The app integrates the fine-tuned Random Forest model.
+
+Files in Repository
+hotel_booking_analysis.ipynb	Complete data analysis and visualization
+model_training.ipynb	Model building, tuning, and evaluation
+best_random_forest_model.pkl	Saved ML model
+app.py	Streamlit application script
+requirements.txt	Python dependencies
+README.md	Project documentation
+
+How to Run the Project
+Clone the repository
+git clone https://github.com/palak-verma-0309/Hotel-Booking.git
+cd hotel-booking-prediction
+
+Install dependencies
+pip install -r requirements.txt
+
+Run Streamlit app
+streamlit run app.py
+
+Results & Insights
+The model achieved strong performance with balanced precision and recall.
+Lead time, number of special requests, and customer type were major predictors of cancellation.
+Clear behavioral trends were identified — e.g., long lead times and deposit type strongly correlate with cancellations.
